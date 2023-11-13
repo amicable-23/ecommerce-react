@@ -9,7 +9,7 @@ const { id } = useParams()
 const [detail, setDetail]=useState([null])
 
 useEffect(() =>{
-  axios.get(`https://fakestoreapi.com/products/${id}`)
+  axios.get(`https://api.escuelajs.co/api/v1/products/${id}`)
   .then((rat) =>setDetail(rat.data))
   .catch((err) => console.log(err))
 
@@ -17,7 +17,7 @@ useEffect(() =>{
 
   return (
     <div>
-      <img src={detail?.image} alt="" />
+      <img src={detail?.images[0]} alt="" />
       <h4>{detail?.title}</h4>
       <h4 >{detail?.price}</h4>
       <h4>{detail?.category}</h4>
@@ -26,6 +26,7 @@ useEffect(() =>{
       
     </div>
   )
+
 }
 
 export default Details

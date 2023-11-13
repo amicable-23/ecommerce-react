@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 import { FiShoppingCart } from "react-icons/fi"
+import { useSelector } from 'react-redux'
 
 function Navbar() {
 
-   const [total, setTotal] = useState(0)
+   const total= useSelector((state) => state.cart.total)
+
   
-  function Change(){
-    setTotal(total + 1)
-  }
   return (
     <div>
       <nav className="navbar navbar-expand-sm navbar-light bg-warning">
@@ -32,7 +31,7 @@ function Navbar() {
               <FiShoppingCart size={40} />
             </Link>
 
-            <button onClick={() => Change()}>Change</button>
+            
           </div>
         </div>
       </nav>

@@ -16,7 +16,7 @@
   object-fit: contain;
 }
 .productcard img:hover{
-  transform: scale(1,2);
+  transform: scale(2,2);
   transition: all 5s ease-in-out;
 }
 

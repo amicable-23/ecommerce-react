@@ -8,7 +8,7 @@ function Home() {
   const [products, setProducts]= useState([])
 
   useEffect(()=>{
-  axios.get("https://fakestoreapi.com/products")
+  axios.get("https://api.escuelajs.co/api/v1/products?offset=0&limit=8")
      .then((res)=> setProducts(res.data))
 
   }, [])
